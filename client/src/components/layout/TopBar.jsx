@@ -30,7 +30,7 @@ const TopBar = (props) => {
           <Button color="inherit" onClick={() => history.push('/signup')}>Sign up</Button>
         }
         {
-          /page$/.test(location.pathname) &&
+          /texts$/.test(location.pathname) &&
           <Button color="inherit" onClick={() => history.push('/logout')}>Log out</Button>
         }
       </Toolbar>
