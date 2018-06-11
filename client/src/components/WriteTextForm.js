@@ -15,7 +15,7 @@ export default class WriteForm extends PureComponent {
         [name]: value
         })
     }
-    
+
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
