@@ -1,5 +1,3 @@
-# Basic-ASLL
+# Ideas
 
-## Project description
-
-The project contains basic authorisation, signup, login and logout in React-Redux.
+Project in progress...
