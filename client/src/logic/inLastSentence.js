@@ -1,9 +1,8 @@
-// 1st version
+// version 1
 const inLastSentence = (sentence) => {
-    let splitText = sentence.split('. ')
-    let result = splitText.filter(text=>text.includes('!'))
-    // console.log(same)
-    return result[0]
+
+    let splitText = sentence.split('. ').pop()
+    return splitText
 }
 
 module.exports = inLastSentence
