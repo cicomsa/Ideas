@@ -1,8 +1,8 @@
 const findAsLastSentence = (sentence) => {
-    let text = sentence.split('. ')
-    let same = text.filter(text=>text.includes('!'))
-    console.log(same[0])
-    return same[0]
+    let splitText = sentence.split('. ')
+    let result = splitText.filter(text=>text.includes('!'))
+    // console.log(same)
+    return result[0]
 }
 
 module.exports = findAsLastSentence
