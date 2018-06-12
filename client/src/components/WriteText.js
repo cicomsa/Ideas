@@ -20,22 +20,21 @@ class WriteText extends PureComponent {
     render() {
         const {texts} = this.props
 
-        const filteredIdea = texts.filter(texts => texts.idea.includes('.'))
+        const filteredIdea = texts.filter(texts => texts.idea.includes(','))
         const idea = filteredIdea.map(text=><p key={text.id}>{text.idea}</p>)
 
         const splitedIdea = filteredIdea
             .map(text=>text.idea)
-            .map(idea=> idea.split('.'))
+            .map(idea=> idea.split(','))
 
         const ideaBeforeDot = splitedIdea.map(idea => idea[0])
         const ideaAfterDot = splitedIdea.map(idea => idea[1])
         
-    
         return (
         <div>
             <WriteTextForm onSubmit={this.addText}/> 
             {idea}
-            {console.log(ideaAfterDot, 'and', ideaBeforeDot)}
+            {console.log(ideaAfterDot.map(word=>word.substring((word.lastIndexOf('?')+1), word.indexOf('!'))))}
         </div>
         )
     }
