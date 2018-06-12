@@ -3,6 +3,7 @@
 let sentence = "Another! Yesterday. Today! Tomorrow. Hello! another. me!"
 
 const inFirstAndLastSentence = (sentence) => {
+
     let splitText = sentence.split('. ')
     let asLastChar = splitText.filter(text=> text.charAt(text.length-1) === '!')
     let asMiddleChar = splitText.filter(text=> text.charAt(text.length-1) !== '!')

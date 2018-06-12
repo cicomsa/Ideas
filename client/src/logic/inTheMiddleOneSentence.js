@@ -1,10 +1,8 @@
 // version 2
 const inTheMiddleOneSentence = (sentence) => {
-    let splitText = sentence.split('. ')
-    let textIncludes = splitText.filter(text=>text.includes('!'))
-    let joinedText = textIncludes.join('')
-    let result = joinedText.split("!")[0] + "!"
-    return result
+   
+    let text = sentence.split('. ').pop().split('!').shift() + '!';
+    return text
 }
 
 module.exports = inTheMiddleOneSentence
