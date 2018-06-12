@@ -1,4 +1,5 @@
-const sentenceAsMiddle = (sentence) => {
+// version 2
+const inTheMiddleOneSentence = (sentence) => {
     let splitText = sentence.split('. ')
     let textIncludes = splitText.filter(text=>text.includes('!'))
     let joinedText = textIncludes.join('')
@@ -6,4 +7,4 @@ const sentenceAsMiddle = (sentence) => {
     return result
 }
 
-module.exports = sentenceAsMiddle
+module.exports = inTheMiddleOneSentence
