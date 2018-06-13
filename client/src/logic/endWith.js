@@ -1,12 +1,15 @@
 //version 8
 const endWith = (sentence) => {
-    if (!sentence.includes('. ')) {
-        return sentence
-    } else {
+          
+    if (sentence.includes('. ')) {
         let splitText = sentence.split('. ')
-        let filteredText =  splitText.filter(text=>text.includes('!')).join('')
+        let filteredText = splitText
+            .filter(text=>text.includes('!'))
+            .join('')
         return filteredText             
     }
+    
+    return sentence
 }
 
 module.exports = endWith
