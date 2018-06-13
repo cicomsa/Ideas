@@ -1,6 +1,4 @@
-// version 6 + 7
-
-let sentence = "Another! Yesterday. Today! Tomorrow. Hello, another. me!"
+// version 6 + 7 + 9
 
 const paragraph = (sentence) => {
   
@@ -11,20 +9,20 @@ const paragraph = (sentence) => {
     let includesSign = splitText.filter(text=>(text.includes('!') ))
    
     let signLastChar = includesSign.filter(text=> text.charAt(text.length-1) === '!' ).join('')
+    result.push( signLastChar)
     
     let signMiddleChar = includesSign.filter(text=> text.charAt(text.length-1) !== '!')
 
-    let splitSignMiddleChar = () => {
+    const splitSignMiddleChar = () => {
         if (signMiddleChar)  {
             let splitSign = signMiddleChar.map(text=>text.split('!'))
             let result = splitSign.map(text=>text[0]+ '!')
-            return result.join('')
+        
+            return result
             }
-    } 
-
-    splitSignMiddleChar() ? result.push(splitSignMiddleChar(), signLastChar): result.push(signLastChar)
-    
-    return result  
+    }
+   
+    if (splitSignMiddleChar()) return splitSignMiddleChar().concat(result) 
   
 }
 
