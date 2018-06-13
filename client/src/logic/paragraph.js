@@ -1,4 +1,4 @@
-// version 6
+// version 6 + 7
 
 let sentence = "Another! Yesterday. Today! Tomorrow. Hello, another. me!"
 
@@ -20,16 +20,12 @@ const paragraph = (sentence) => {
             let result = splitSign.map(text=>text[0]+ '!')
             return result.join('')
             }
-    
     } 
 
     splitSignMiddleChar() ? result.push(splitSignMiddleChar(), signLastChar): result.push(signLastChar)
     
     return result  
-
-   
-
-    
+  
 }
 
 module.exports = paragraph
