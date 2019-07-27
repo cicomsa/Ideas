@@ -23,7 +23,7 @@ test('sentence2 contains', () => {
 );
 });
 
-// test('sentence3 contains', () => {
-//     expect(paragraph(sentence3)).toEqual(["So! I thought about something today! And what I saw was that! I don't have that content in me!", "My eyes have the life already! They are already happy!"]
-// );
-// });
+test('sentence3 contains', () => {
+    expect(paragraph(sentence3)).toEqual(["So! I thought about something today! And what I saw was that! I don't have that content in me!", "My eyes have the life already! They are already happy!"]
+);
+});
