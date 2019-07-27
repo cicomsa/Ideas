@@ -5,9 +5,9 @@ let sentence = "Yesterday. Today!"
 let sentence1 = "Yesterday! Today!"
 
 test('sentence contains !', () => {
-    expect(endWith(sentence)).toBe("Today!");
+    expect(endWith(sentence)).toEqual(["Today!"]);
 });
 
 test('sentence contains', () => {
-    expect(endWith(sentence1)).toBe("Yesterday! Today!");
+    expect(endWith(sentence1)).toEqual(["Yesterday!", "Today!"]);
 });

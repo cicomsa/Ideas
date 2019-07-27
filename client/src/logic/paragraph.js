@@ -26,12 +26,14 @@ const paragraph = (sentence) => {
 
     const splitText = sentence.split('!')
     const text = []
-    splitText.filter(sentence => sentence !== '').map(sentence => {
+    splitText
+      .filter(sentence => sentence !== '' && sentence[sentence.length - 1] !== '.')
+      .map(sentence => {
       if (sentence.includes('.')) {
         const leftToSplit = sentence.split('. ').pop()
         text.push('§' + leftToSplit + '!')
       } else {
-        text.push(sentence + '!')
+        text.push('§' + sentence.trim() + '!')
       }
     })
 
