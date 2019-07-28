@@ -14,6 +14,8 @@ const threeDots = sentence => {
       } else {
         text.push('§' + sentence.trim() + '!')
       }
+
+      return sentence
     })
 
     const result = text.join('').split('§').filter(sentence => sentence !== '')

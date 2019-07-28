@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import WriteTextForm from './WriteTextForm'
 import {addText, deleteText, fetchTexts} from '../actions/text'
+import filter from '../logic/threeDots'
 
 class WriteText extends PureComponent {
 
@@ -12,7 +13,7 @@ class WriteText extends PureComponent {
     addText = (text) => {
         this.props.addText(text)
       }
-    
+
       deleteText = (textId) => {
       this.props.deleteText(textId)
     }
@@ -20,21 +21,14 @@ class WriteText extends PureComponent {
     render() {
         const {texts} = this.props
 
-        const filteredIdea = texts.filter(texts => texts.idea.includes(','))
-        const idea = filteredIdea.map(text=><p key={text.id}>{text.idea}</p>)
+        const filteredIdea = texts.map(text => <p key={text.id}>{filter(text.idea)}</p>)
 
-        const splitedIdea = filteredIdea
-            .map(text=>text.idea)
-            .map(idea=> idea.split(','))
+// console.log(displayIdea)
 
-        const ideaBeforeDot = splitedIdea.map(idea => idea[0])
-        const ideaAfterDot = splitedIdea.map(idea => idea[1])
-        
         return (
         <div>
-            <WriteTextForm onSubmit={this.addText}/> 
-            {idea}
-            {console.log(ideaAfterDot.map(word=>word.substring((word.lastIndexOf('?')+1), word.indexOf('!'))))}
+          <WriteTextForm onSubmit={this.addText}/>
+          {filteredIdea}
         </div>
         )
     }
@@ -45,5 +39,5 @@ const mapStateToProps = function (state) {
         texts: state.texts
     }
 }
-  
+
 export default connect(mapStateToProps, {fetchTexts, addText, deleteText})(WriteText)
